@@ -1,0 +1,252 @@
+:root {
+    --primary-color: #ebc386;
+    --white: #fff;
+    --primary-border: #eee;
+    --gap: 3rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/*
+    font-family: 'Major Mono Display', monospace;
+
+    font-family: 'Open Sans', sans-serif;
+
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+*/
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Major Mono Display', monospace;
+    font-size: 1.6rem;
+    background-color: #e6e6e6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 6rem;
+}
+
+h2 {
+    font-size: 5rem;
+}
+
+h3 {
+    font-size: 4rem;
+}
+
+h4 {
+    font-size: 3rem;
+}
+
+h5 {
+    font-size: 2rem;
+}
+
+h6 {
+    font-size: 1rem;
+}
+
+.spacing-header {
+    height: 6rem;
+}
+
+.text-top-3 section {
+    max-width: 67rem;
+    margin: auto;
+}
+
+.text-top-3 {
+    height: 100vh;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    text-align: center;
+}
+
+.text-top-3 h2 {
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+}
+
+.text-top-3 p {
+    line-height: 2.8rem;
+    margin-bottom: 3rem;
+}
+
+.grid-section {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    height: 100vh;
+}
+
+.grid-section p{
+ opacity: 0;
+}
+
+.visible {
+    animation: opacity 1s ease both;
+}
+
+.text-prof {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+}
+
+.bg-white {
+    background-color: var(--white);
+    color: var(--primary-color)
+}
+
+.first-img {
+    background-image: url('../img/sun-tornado.svg');
+    background-size: cover;
+    background-position: center center;
+    color: var(--white);
+}
+
+.content-first-img {
+    max-width: 120rem;
+    margin: 0 auto;
+    padding: var(--gap);
+}
+
+.section-land {
+    min-height: 100vh;
+}
+
+.digitando {
+    opacity: 100%;
+    animation: 500ms piscando_cursor steps(15) infinite normal,
+        tipyng 2s steps(15) 1s normal both;
+    overflow: hidden;
+    border-right: 2px solid rgba(255, 255, 255, 0.75);
+    white-space: nowrap;
+}
+
+.grid-text {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gap);
+}
+
+.grid-text div {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.grid-text p {
+    line-height: 2.7rem;
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 888;
+    background: #ebc386;
+    border-bottom: .1rem solid var(--primary-border);
+}
+
+.menu nav {
+    height: 6rem;
+    display: flex;
+    align-items: center;
+}
+
+.menu nav ul {
+    width: 100%;
+    display: inherit;
+    list-style: none;
+    justify-self: flex-end;
+    justify-content: space-around;
+}
+
+.menu nav li {
+    position: relative;
+    cursor: pointer;
+}
+
+.menu nav li::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    transition: all 300ms ease-in-out;
+    height: 0.2rem;
+    background-color: var(--primary-color);
+}
+
+.menu nav li:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.second-img {
+    background-image: url('../img/pattern-randomized.svg');
+    background-size: cover;
+    background-position: center center;
+    color: var(--primary-color);
+}
+
+.second-img h2 {
+    text-transform: uppercase;
+}
+
+.a_mesa {
+    animation: animation_key_frame 5s infinite;
+}
+
+@keyframes piscando_cursor {
+    100% {
+        border-color: transparent;
+    }
+}
+
+@keyframes animation_key_frame {
+    0% {
+        rotate: 0;
+    }
+
+    100% {
+        rotate: 360deg;
+    }
+}
+
+@keyframes tipyng {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 270px;
+    }
+}
+
+@keyframes opacity {
+    100% {
+        opacity: 100%;
+    }
+}
